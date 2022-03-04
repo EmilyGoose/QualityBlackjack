@@ -29,8 +29,22 @@ internal class CardTest {
         )
         assertEquals(
             0,
-            Card(CardSuit.SPADES, CardValue.SEVEN).compareTo(Card(CardSuit.CLUBS,CardValue.SEVEN)),
+            Card(CardSuit.SPADES, CardValue.SEVEN).compareTo(Card(CardSuit.CLUBS, CardValue.SEVEN)),
             "Cards of same value in different suits should be equal"
         )
+    }
+
+    @Test
+    fun getDesignator() {
+        // Test that the correct designator is returned
+        assertEquals("K", Card(CardSuit.CLUBS, CardValue.KING).getDesignator(), "Designator for King should be K")
+        assertEquals("10", Card(CardSuit.CLUBS, CardValue.TEN).getDesignator(), "Designator for 10 should be 10")
+    }
+
+    @Test
+    fun getSuit() {
+        // Make sure correct suits are returned
+        assertEquals(CardSuit.CLUBS, Card(CardSuit.CLUBS, CardValue.KING).getSuit(), "Card suit should be clubs")
+        assertEquals(CardSuit.SPADES, Card(CardSuit.SPADES, CardValue.KING).getSuit(), "Card suit should be spades")
     }
 }

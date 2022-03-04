@@ -62,7 +62,7 @@ internal class AiPlayerTest {
         // Make sure newly instantiated player has no cards
         assertEquals(0, player.cards.size, "Player with no cards should have size 0")
         // Give the player a bunch of cards and make sure size changes accordingly
-        for (i in 1 .. 20) {
+        for (i in 1..20) {
             // 20 of the same card is fine, we're testing size
             player.giveCard(Card(CardSuit.SPADES, CardValue.ACE))
             assertEquals(i, player.cards.size, "Player card size should scale with cards given")
@@ -84,5 +84,11 @@ internal class AiPlayerTest {
         // Make sure player has no cards left after returning
         // We don't need to check the deck as we test discard separately
         assertEquals(0, player.cards.size, "Player should have no cards after returning them all")
+    }
+
+    @Test
+    fun notifyBust() {
+        // Call notifyBust and make sure it doesn't error
+        player.notifyBust()
     }
 }
