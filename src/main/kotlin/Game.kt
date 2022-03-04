@@ -9,6 +9,14 @@ Software Quality Assignment 1
 Emily Goose 100743093
  */
 
+// Main function (Can't be in a class in Kotlin)
+fun main() {
+    // Initialize the game instance
+    val game = Game()
+    // Start the game
+    game.startGame()
+}
+
 class Game {
     var players = ArrayList<Player>()
 
@@ -149,12 +157,4 @@ class Game {
         // Pretty sure I forgot to kill JOptionPane or something but this is my "fix"
         exitProcess(0)
     }
-}
-
-// Main function (Can't be in a class in Kotlin)
-fun main() {
-    // Initialize the game instance
-    val game = Game()
-    // Start the game
-    game.startGame()
 }
